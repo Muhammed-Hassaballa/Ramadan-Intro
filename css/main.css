@@ -1,0 +1,358 @@
+html {
+    height: 100%;
+}
+body{
+    /* background-color: #212121; */
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+h1{
+    color: #ffcdd2;
+    display: flex;
+    align-items: center;
+    font-family: 'Cairo', sans-serif;
+}
+#main{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.moon{
+    width:150px;
+    height: 150px;
+    background-color: #616161;
+    border-radius: 50%;
+}
+ul{
+    text-align: center;
+    margin: 0 auto;
+    width: 400px;
+}
+.star{
+    position:relative;
+    height: 100%;
+}
+.stars{
+    letter-spacing: 45px;
+    font-size: 30px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+.stars:nth-child(even){
+    color: rgba(255, 255, 0, 1);
+    animation-name: even;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.stars:nth-child(odd){
+    color: rgba(255, 255, 255, .1);
+    animation-name: odd;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#one{
+    top: 21px;
+    left: -433px;
+}
+#two{
+    left: -509px;
+    top: 624px;
+}
+#three{
+    top: 238px;
+    left: -595px;
+}
+#four{
+    top: 140px;
+    left: -534px;
+}
+#five{
+    left: 698px;
+    top: 599px;
+}  
+#six{
+    top: -10px;
+    left: 622px;
+}
+#seven{
+    top: 302px;
+    left: 516px;
+}
+#eight{
+    top: 451px;
+    left: -558px;
+}
+#nine{
+    top: 123px;
+    right: -570px;
+}
+#ten{
+    top: 432px;
+    right: -476px;
+}
+#eleven{
+    bottom: -742px;
+    right: -607px;
+}
+#twelve{
+    top: 272px;
+    left: 181px;
+}
+#thirteen{
+    top: 538px;
+    left: 424px;
+}
+#fourteen{
+    top: 367px;
+    left: 783px;
+}
+#fifteen {
+    top: 532px;
+    left: -15px;
+}
+#sixteen {
+    top: 530px;
+    left: -389px;
+} 
+#seventeen {
+    top: -109px;
+    right: -303px;
+} 
+#eightteen {
+    top: 130px;
+    left: -204px;
+}
+#nineteen {
+    top: 204px;
+    left: 57px;
+}
+#twenty {
+    top: 4px;
+    left: -277px;
+}
+#twenty-one {
+    top: 214px;
+    left: -613px;
+}
+#twenty-two {
+    top: -142px;
+    left: 385px;
+}
+#twenty-three {
+    top: 633px;
+    left: 124px;
+    }
+#twenty-four {
+    top: 635px;
+    left: -280px;
+}
+#twenty-five {
+    top: 594px;
+    right: 389px;
+}
+#twenty-six {
+    top: -179px;
+    left: -163px;
+}
+#twenty-seven {
+    top: -99px;
+    left: -53px;
+}
+#twenty-eight {
+    top: 15px;
+    left: 44px;
+}
+#luna{
+    width: 100%;
+    height: 100%;
+    margin: 50px auto;
+    overflow: hidden;
+}
+#moon-container{
+    width: fit-content;
+    margin: 0 auto;
+}
+#moon{
+    width:150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 10;
+    bottom: 30px;
+    box-shadow: inset -35px -25px 0 0 #616161;
+    animation-name: moon;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    margin: 0 auto;
+}
+@keyframes snow {
+    from{transform: rotate(360deg);}
+}
+@keyframes moon {
+    from{transform: rotate(75deg);};
+}
+@keyframes even {
+    from{color: rgba(255, 255, 0, .1);};
+}
+@keyframes odd {
+    from{color: rgba(255, 255, 255 ,1);}
+}
+/* start text animation */ 
+:root {
+    --delay: 0;
+    --duration: 800ms;
+    --iterations: 1;
+}
+.reveal-text,
+.reveal-text::after {
+    animation-delay: var(--animation-delay, 2s);
+    animation-iteration-count: var(--iterations, 1);
+    animation-duration: var(--duration, 800ms);
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+.reveal-text {
+    --animation-delay: var(--delay, 0);
+    --animation-duration: var(--duration, 800ms);
+    --animation-iterations: var(--iterations, 1);
+    font-size: 3vw;
+    animation-name: clip-text;
+    color: #ffcdd2;
+    white-space: nowrap;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes clip-text {
+    from {
+    clip-path: inset(0 100% 0 0);
+    }
+    to {
+    clip-path: inset(0 0 0 0);
+    }
+}
+@keyframes text-revealer {    
+    0%, 50% {
+    transform-origin: 0 50%;
+    }
+    
+    60%, 100% {
+    transform-origin: 100% 50%;   
+    }
+    60% {
+    transform: scaleX(1);
+    }
+    
+    100% {
+    transform: scaleX(0);
+    }
+}
+/* start media  */
+/* @media (max-width: 600px) {
+    .reveal-text {
+        font-size: 7vw;
+    }
+    #moon-container{
+       position: relative;
+       top: -22%;
+    }
+} */
+@media (max-width: 767px) {
+    .reveal-text {
+        font-size: 5vw;
+    }
+    .lantern {
+        position: absolute;
+        top: 62%;
+        left: 6%;
+    }
+    .intern-container {
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        position: relative;
+        top: 15%;
+        left: 37%;
+    }
+}
+@media (max-width: 992px) {
+    .reveal-text {
+        font-size: 5vw;
+    }
+    #moon-container{
+        position: relative;
+        top: -24%;
+    }
+    .intern-container { 
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    }
+}
+@media (max-width: 992px) {
+    .reveal-text {
+        font-size: 5vw;
+    }
+}
+@media (max-width: 992px) {
+    .reveal-text {
+        font-size: 5vw;
+    }
+}
+/*  */
+.intern-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lantern {
+    background-image: url("/image/lantern.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    height: 300px;
+    width: 200px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    transform-origin: center 20px;
+    animation: flickerLantern 1s ease-in-out alternate infinite;
+    /* z-index: 0; */
+    }
+    .lantern::before{
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: #f2f2f2;
+        top: -40px;
+        left: 50%;
+        border-radius: 50%;
+    }
+    #paper-pin {
+        width: 60px;
+        height: 60px;
+        transform: translate(30%,0);
+        z-index: 100;
+    }
+    
+    
+    @keyframes flickerLantern {
+        0% {
+            transform: rotate(30deg);
+        }
+        100% {
+            transform: rotate(-30deg);
+        }
+
+    }
